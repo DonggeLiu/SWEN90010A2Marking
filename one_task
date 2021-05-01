@@ -1,0 +1,7 @@
+#!/usr/local/bin/zsh
+task=$1
+java_path="/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/bin/java"
+alloy_jar="${PWD}/Alloy/Alloy-5.0.0.1.jar"
+alloy_par="edu.mit.csail.sdg.alloy4whole.ExampleUsingTheCompiler"
+
+$java_path -cp $alloy_jar $alloy_par $task | grep --line-buffered "Check\|Run\|INSTANCE\|Unsatisfiable\|Exception" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception/, "\033[31;1;4m&\033[0m");print }' || true

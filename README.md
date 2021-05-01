@@ -4,8 +4,14 @@ Automate Alloy marking
 
 Unzip student submissions into submissions/
 
-Run 
+Run the following to mark all tasks of a student
 
 ```bash
-./HIS2 submissions/<a student submission.als>
+./all_tasks submissions/<a student submission.als>
+```
+
+Run the following to mark a specific task of a student
+
+```bash
+./one_task submissions/<a student directory>/<task.X.als>
 ```
