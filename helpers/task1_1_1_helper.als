@@ -23,6 +23,8 @@ pred user_send_post_correct[m : Message, s : State, s' : State] {
   )
 }
 
+fact { all s, s' : State | s.last_answered = s'.last_answered and s.last_called = s'.last_called}
+
 assert TASK1_1_send_CORRECT {
 	all m : Message, s, s' : State |
 	user_send_pre[m, s] =>

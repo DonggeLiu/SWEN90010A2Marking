@@ -10,6 +10,8 @@ pred user_recv_post_correct[m : Message, s : State, s' : State] {
   )
 }
 
+fact { all s, s' : State | s.last_answered = s'.last_answered and s.last_called = s'.last_called}
+
 assert TASK1_1_recv_CORRECT {
 	all m : Message, s, s' : State |
   user_recv_pre[m, s] =>
