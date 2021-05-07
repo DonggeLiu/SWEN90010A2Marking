@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/zsh
 task=$1
 java_path="/Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home/bin/java"
 alloy_jar="${PWD}/Alloy/Alloy-5.0.0.1.jar"
