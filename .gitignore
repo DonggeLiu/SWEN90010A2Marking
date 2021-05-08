@@ -2,3 +2,6 @@ alloy_example_output.xml
 
 submissions.zip
 submissions/
+
+# MacOS
+.DS_Store
