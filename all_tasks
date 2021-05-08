@@ -18,7 +18,7 @@ echo "\n" >> "$student_dir/task1.1.1.als"
 awk '/pred user_send_post/, /}/' $submission >> "$student_dir/task1.1.1.als"
 echo "\n" >> "$student_dir/task1.1.1.als"
 cat "${PWD}/helpers/task1_1_1_helper.als" >> "$student_dir/task1.1.1.als"
-$java_path -cp $alloy_jar $alloy_par "$student_dir/task1.1.1.als" 2>&1 | grep "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
+$java_path -cp $alloy_jar $alloy_par "$student_dir/task1.1.1.als" 2>&1 | grep  --line-buffered "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
 
 # ===== Task 1.1. recv ===== #
 echo ""
@@ -28,7 +28,7 @@ echo "\n" >> "$student_dir/task1.1.2.als"
 awk '/pred user_recv_post/, /}/' $submission >> "$student_dir/task1.1.2.als"
 echo "\n" >> "$student_dir/task1.1.2.als"
 cat "${PWD}/helpers/task1_1_2_helper.als" >> "$student_dir/task1.1.2.als"
-$java_path -cp $alloy_jar $alloy_par "$student_dir/task1.1.2.als" 2>&1 |  grep "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
+$java_path -cp $alloy_jar $alloy_par "$student_dir/task1.1.2.als" 2>&1 |  grep  --line-buffered "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
 
 
 # ===== Task 1.2. ===== #
@@ -42,7 +42,7 @@ awk '/pred user_send_post/, /}/' $submission >> "$student_dir/task1.2.0.als"
 echo "\n" >> "$student_dir/task1.2.0.als"
 awk '/assert no_bad_states/, /}/' $submission >> "$student_dir/task1.2.0.als"
 cat "${PWD}/helpers/fact_1_2_0.als" >> "$student_dir/task1.2.0.als"
-$java_path -cp $alloy_jar $alloy_par "$student_dir/task1.2.0.als" 2>&1 | grep "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
+$java_path -cp $alloy_jar $alloy_par "$student_dir/task1.2.0.als" 2>&1 | grep  --line-buffered "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
 
 echo ""
 echo "************************* Marking Task 1.2 require 1 ************************* " | awk '{gsub(/[0-9\.]/, "\033[31;1;4m&\033[0m"); print}'
@@ -53,7 +53,7 @@ echo "\n" >> "$student_dir/task1.2.1.als"
 awk '/pred user_send_post/, /}/' $submission >> "$student_dir/task1.2.1.als"
 awk '/assert no_bad_states/, /}/' $submission >> "$student_dir/task1.2.1.als"
 cat "${PWD}/helpers/fact_1_2_1.als" >> "$student_dir/task1.2.1.als"
-$java_path -cp $alloy_jar $alloy_par "$student_dir/task1.2.1.als" 2>&1 | grep "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
+$java_path -cp $alloy_jar $alloy_par "$student_dir/task1.2.1.als" 2>&1 | grep  --line-buffered "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
 
 
 # ===== Task 2.1. ===== #
@@ -63,7 +63,7 @@ cp "$submission" "$student_dir/task2.1.als"
 sed -i "" '/^run/d' "$student_dir/task2.1.als"
 sed -i "" '/^check/d' "$student_dir/task2.1.als"
 echo "check no_bad_states for 8 but 3 Address" >> "$student_dir/task2.1.als"
-$java_path -cp $alloy_jar $alloy_par "$student_dir/task2.1.als" 2>&1 | grep "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
+$java_path -cp $alloy_jar $alloy_par "$student_dir/task2.1.als" 2>&1 | grep  --line-buffered "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
 
 
 
