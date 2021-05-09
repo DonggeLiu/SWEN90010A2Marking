@@ -80,7 +80,7 @@ grep "check no_bad_states for" $submission | awk '{gsub(/[0-9]/, "\033[31;1;4m&\
 # ===== Task 2.3.1. ===== #
 echo ""
 echo "************************* Marking Task 2.3.1 require 0 ************************* " | awk '{gsub(/[0-9\.]/, "\033[31;1;4m&\033[0m"); print}'
-awk '/^run/, /$/' $submission | awk '{gsub(/[0-9]|run/, "\033[31;1;4m&\033[0m");print }'
+awk '/^run/, /for/' $submission | awk '{gsub(/[0-9]|run/, "\033[31;1;4m&\033[0m");print }'
 echo ""
 cp "$submission" "$student_dir/task2.3.1.0.als"
 sed -i "" '/^check/d' "$student_dir/task2.3.1.0.als"
