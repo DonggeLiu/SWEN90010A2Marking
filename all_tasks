@@ -77,11 +77,15 @@ echo "************************* Marking Task 2.2 ************************* " | a
 grep "check no_bad_states for" $submission | awk '{gsub(/[0-9]/, "\033[31;1;4m&\033[0m");print }'
 
 
+# ===== Task 2.3. ===== #
+echo ""
+echo "************************* Task 2.3 ************************* " | awk '{gsub(/[0-9\.]/, "\033[31;1;4m&\033[0m"); print}'
+awk '/^run/, /for/' $submission | awk '{gsub(/[0-9]|run/, "\033[31;1;4m&\033[0m");print }'
+
+
 # ===== Task 2.3.1. ===== #
 echo ""
 echo "************************* Marking Task 2.3.1 require 0 ************************* " | awk '{gsub(/[0-9\.]/, "\033[31;1;4m&\033[0m"); print}'
-awk '/^run/, /for/' $submission | awk '{gsub(/[0-9]|run/, "\033[31;1;4m&\033[0m");print }'
-echo ""
 cp "$submission" "$student_dir/task2.3.1.0.als"
 sed -i "" '/^check/d' "$student_dir/task2.3.1.0.als"
 cat "helpers/fact_2_3_1_0.als" >> "$student_dir/task2.3.1.0.als"
