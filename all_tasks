@@ -71,20 +71,27 @@ echo "check no_bad_states for 8 but 3 Address" >> "$student_dir/task2.1.als"
 $java_path -cp $alloy_jar $alloy_par "$student_dir/task2.1.als" 2>&1 | grep  --line-buffered "Check\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
 
 
+# ===== Task 2.1. ===== #
+echo ""
+echo "************************* Marking Task 2.2 ************************* " | awk '{gsub(/[0-9\.]/, "\033[31;1;4m&\033[0m"); print}'
+grep "check no_bad_states for" $submission | awk '{gsub(/[0-9]/, "\033[31;1;4m&\033[0m");print }'
+
 
 # ===== Task 2.3.1. ===== #
 echo ""
 echo "************************* Marking Task 2.3.1 require 0 ************************* " | awk '{gsub(/[0-9\.]/, "\033[31;1;4m&\033[0m"); print}'
+awk '/^run/, /$/' $submission | awk '{gsub(/[0-9]|run/, "\033[31;1;4m&\033[0m");print }'
+echo ""
 cp "$submission" "$student_dir/task2.3.1.0.als"
 sed -i "" '/^check/d' "$student_dir/task2.3.1.0.als"
 cat "helpers/fact_2_3_1_0.als" >> "$student_dir/task2.3.1.0.als"
-$java_path -cp $alloy_jar $alloy_par "$student_dir/task2.3.1.0.als" 2>&1 | grep --line-buffered "Run\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
+$java_path -cp $alloy_jar $alloy_par "$student_dir/task2.3.1.0.als" 2>&1 | grep --line-buffered "Run\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found|Default/, "\033[31;1;4m&\033[0m");print }' || true
 
 echo ""
 echo "************************* Marking Task 2.3.1 require 1 ************************* " | awk '{gsub(/[0-9\.]/, "\033[31;1;4m&\033[0m"); print}'
 cp "$submission" "$student_dir/task2.3.1.1.als"
 sed -i "" '/^check/d' "$student_dir/task2.3.1.1.als"
-$java_path -cp $alloy_jar $alloy_par "$student_dir/task2.3.1.1.als" 2>&1 | grep --line-buffered "Run\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
+$java_path -cp $alloy_jar $alloy_par "$student_dir/task2.3.1.1.als" 2>&1 | grep --line-buffered "Run\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found|Default/, "\033[31;1;4m&\033[0m");print }' || true
 
 
 # ===== Task 2.3.2. ===== #
@@ -93,11 +100,11 @@ echo "************************* Marking Task 2.3.2 require 0 *******************
 cp "$submission" "$student_dir/task2.3.2.0.als"
 sed -i "" '/^check/d' "$student_dir/task2.3.2.0.als"
 cat "helpers/fact_2_3_2_0.als" >> "$student_dir/task2.3.2.0.als"
-$java_path -cp $alloy_jar $alloy_par "$student_dir/task2.3.2.0.als" 2>&1 | grep --line-buffered "Run\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
+$java_path -cp $alloy_jar $alloy_par "$student_dir/task2.3.2.0.als" 2>&1 | grep --line-buffered "Run\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found|Default/, "\033[31;1;4m&\033[0m");print }' || true
 
 echo ""
 echo "************************* Marking Task 2.3.2 require 1 ************************* " | awk '{gsub(/[0-9\.]/, "\033[31;1;4m&\033[0m"); print}'
 cp "$submission" "$student_dir/task2.3.2.1.als"
 sed -i "" '/^check/d' "$student_dir/task2.3.2.1.als"
 cat "helpers/fact_2_3_2_1.als" >> "$student_dir/task2.3.2.1.als"
-$java_path -cp $alloy_jar $alloy_par "$student_dir/task2.3.2.1.als" 2>&1 | grep --line-buffered "Run\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found/, "\033[31;1;4m&\033[0m");print }' || true
+$java_path -cp $alloy_jar $alloy_par "$student_dir/task2.3.2.1.als" 2>&1 | grep --line-buffered "Run\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found|Default/, "\033[31;1;4m&\033[0m");print }' || true
