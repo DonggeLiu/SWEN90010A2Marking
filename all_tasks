@@ -108,3 +108,6 @@ cp "$submission" "$student_dir/task2.3.2.1.als"
 sed -i "" '/^check/d' "$student_dir/task2.3.2.1.als"
 cat "helpers/fact_2_3_2_1.als" >> "$student_dir/task2.3.2.1.als"
 $java_path -cp $alloy_jar $alloy_par "$student_dir/task2.3.2.1.als" 2>&1 | grep --line-buffered "Run\|INSTANCE\|Unsatisfiable\|Exception\|cannot be found" | awk '{gsub(/INSTANCE|Unsatisfiable|Exception|cannot be found|Default/, "\033[31;1;4m&\033[0m");print }' || true
+
+echo ""
+echo "************************* All Done ************************* " | awk '{gsub(/All Done/, "\033[31;1;4m&\033[0m"); print}'
