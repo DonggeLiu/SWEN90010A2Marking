@@ -9,6 +9,8 @@ echo $student_dir
 mkdir -p $student_dir
 
 
+grep -n "ord/prev" $submission | awk '{gsub(/ord\/prev/, "\033[31;1;4m&\033[0m");print }'
+
 # ===== Task 1.1. ===== #
 # ===== Task 1.1. send ===== #
 echo ""
