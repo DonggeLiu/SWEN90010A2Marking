@@ -81,6 +81,7 @@ grep "check no_bad_states for" $submission | awk '{gsub(/[0-9]/, "\033[31;1;4m&\
 echo ""
 echo "************************* Task 2.3 ************************* " | awk '{gsub(/[0-9\.]/, "\033[31;1;4m&\033[0m"); print}'
 awk '/^run/, /for/' $submission | awk '{gsub(/[0-9]|run/, "\033[31;1;4m&\033[0m");print }'
+echo "Expecting two run statements bellow:" | awk '{gsub(/run/, "\033[31;1;4m&\033[0m");print }'
 
 
 # ===== Task 2.3.1. ===== #
